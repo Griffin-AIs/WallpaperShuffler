@@ -10,7 +10,7 @@
 - Case insensitive selection, no need to add file extensions yourself
 - Can easily be set as a cron job to change background periodically
 
-## Usage
+<h2>Usage</h2>
 ### Help Menu
 <p>The help menu can be output by entering 'list' as a solitary positional argument. This menu will display all files in your 'Wallpapers' folder. The file extensions will be removed as
 the file extensions aren't required to be input to select a background. There is also some basic instructions on using the tool, as well as a syntax guide and a basic example.</p>
