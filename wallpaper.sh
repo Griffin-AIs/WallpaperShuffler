@@ -20,8 +20,24 @@ if [[ $1 = "list" ]]; then
 	echo "(arguments are not case-sensitive)"
 else
 	if [[ -z $1 ]]; then
+		# Wipe metadata.txt
+		rm metadata.txt
+
+
+		# If metadata.txt does not exist, create it
+		if [[ ! -f "metadata.txt" ]]; then touch "metadata.txt"; fi 
+
+
 		# get number of wallpapers
-		DIR_LENGTH
+		cd Wallpapers
+		DIR_LENGTH=$(ls | wc -l)
+		cd ..
+
+
+		# Write all files into metadata.txt
+		cd Wallpapers
+		for FILE in *; do echo $FILE >> ../metadata.txt; done
+		cd ..
 
 
 		# create array of background images, and select a random one
@@ -30,7 +46,7 @@ else
 		NEW_BG=${IMG_ARRAY[$RANDOM % DIR_LENGTH + 1]}
 		if [[ $NEW_BG = $CURR_BG ]]; then
 			while [[ $NEW_BG = $CURR_BG ]]; do
-				NEW_BG=${IMG_ARRAY[$RANDOM % $DIR_LENGTH + 1]}
+				NEW_BG=${IMG_ARRAY[$NEW_BG]}
 			done
 		fi
 	else
