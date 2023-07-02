@@ -3,6 +3,7 @@
 
 <h2>Setup</h2>
 <p>Once the repo is downloaded, you will have to give the script permission to act as an executable on your device. This can be done using the command 'chmod u+x wallpaper.sh'.</p>
+<p>You will also need to create a directory called 'Wallpapers'. This folder is where you should place any backgrounds you want to be available to the program. Any file format can be used for these images as long as it is supported by the system.</p>
 
 <h2>Features</h2>
 - 'list' command echos whole library and provides guidance<br>
